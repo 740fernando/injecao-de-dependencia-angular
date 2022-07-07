@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { PeopleService } from '../../services/people.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-list-people',
@@ -8,23 +7,10 @@ import { PeopleService } from '../../services/people.service';
 })
 export class ListPeopleComponent implements OnInit {
 
-  count = 0;
-  pessoas = []
-  
-  constructor(private service: PeopleService) { }
+  @Input() list = [];  
+  constructor() { }
 
   ngOnInit(): void {
-    this.getPeople();
-    let interval = setInterval(()=> {
-      this.count++;
-      if(this.count === 10){
-        clearInterval(interval)
-      }
-    }, 1000)
-  }
-  getPeople(){
-    this.service.getPeople().subscribe(people =>{
-      this.pessoas = people;
-    })
+ 
   }
 }
