@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MarcaTextoDirective } from './shared/directive/marca-texto.directive';
 import { FormsModule } from '@angular/forms';
-import { PeopleService } from './shared/people.service';
+import { PeopleService } from './shared/services/people.service';
 
 @NgModule({
   declarations: [
