@@ -54,7 +54,7 @@
   </li>
 </ul>
 
-<app-list-people></app-list-people>
+<app-list-people [list]="pessoas"></app-list-people>
 <!-- iterando com ngTemplate -->
 <ul class="list-group mx-auto my-3 col-3">
     <ng-template ngFor let-pessoa [ngForOf]="pessoas">
