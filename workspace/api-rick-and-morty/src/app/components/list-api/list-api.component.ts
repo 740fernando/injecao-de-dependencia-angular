@@ -7,8 +7,8 @@ import { ListService } from 'src/app/shared/services/list.service';
   styleUrls: ['./list-api.component.css']
 })
 export class ListApiComponent implements OnInit {
+  persons: Array<any> = [];
 
-  person = [];
   constructor(private listService: ListService) { }
 
   ngOnInit() {
@@ -16,10 +16,9 @@ export class ListApiComponent implements OnInit {
   }
 
   getList() {
-    this.listService.getList().subscribe(result =>{
-      this.person = result;
-      console.log(this.person);
-    });
+    this.listService.getList().subscribe(result => {
+      this.persons = result.results;
+      console.log(this.persons)
+    })
   }
-
 }
